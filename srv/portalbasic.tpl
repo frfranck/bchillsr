@@ -19,7 +19,9 @@
             }
             
             function createWebSocket () {
-              var ws = new WebSocket('ws://127.0.0.1:8080/events');
+              var serverip = location.host;
+              //alert(serverip);
+              var ws = new WebSocket('ws://'+serverip+'/events');
               ws.onopen = function(evt) {
                 $('#messages').append('<li>Connected to delivery status queuing pipeline.</li>');
               }
