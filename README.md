@@ -9,7 +9,7 @@ smart routing demo
 	python coreservice.py
 
 # Push an event to the server
-	curl  --header "Content-Type:application/json" -X PUT -d '{"status": "done","delay": 0}' http://127.0.0.1:8080/api/event/cis1/dh1/airb1/H/a123/P2/success/0
+	curl  --header "Content-Type:application/json" -X PUT -d '{"status": "done","delay": 0}' http://127.0.0.1:8080/api/event/cis1/dh1/airb1/a123/H/P2/success/0
 
 	cis1: provider
 	dh1: supplier
@@ -28,3 +28,15 @@ smart routing demo
 	http://<ip>:8080/events
 
 
+# Button / API call mapping
+	P1:
+		curl  --header "Content-Type:application/json" -X PUT -d '{"status": "done","delay": 0}' http://127.0.0.1:8080/api/event/cis1/dh1/airb1/a123/H/P1/progress/12000
+
+	P2:
+		curl  --header "Content-Type:application/json" -X PUT -d '{"status": "done","delay": 0}' http://127.0.0.1:8080/api/event/cis1/dh1/airb1/a123/H/P2/progress/6000
+
+	P3:
+		curl  --header "Content-Type:application/json" -X PUT -d '{"status": "done","delay": 0}' http://127.0.0.1:8080/api/event/cis1/dh1/airb1/a123/H/P3/progress/3000
+
+	P4:
+		curl  --header "Content-Type:application/json" -X PUT -d '{"status": "done","delay": 0}' http://127.0.0.1:8080/api/event/cis1/dh1/airb1/a123/H/P4/success/0
