@@ -38,12 +38,12 @@
 
              $('#send-event').submit(function() {
                 eventstr = $('#prod').val()
-                eventstr += ": " + $('#suppl').val()
-                eventstr += ": " + $('#receiver').val()
-                eventstr += ": " + $('#cmdid').val()
-                eventstr += ": " + $('#priority').val()
-                eventstr += ": " + $('#status').val()
-                eventstr += ": " + $('#delay').val()
+                eventstr += ":" + $('#suppl').val()
+                eventstr += ":" + $('#receiver').val()
+                eventstr += ":" + $('#cmdid').val()
+                eventstr += ":" + $('#priority').val()
+                eventstr += ":" + $('#status').val()
+                eventstr += ":" + $('#delay').val()
                 ws.send(eventstr);
                 $('#message').val('').focus();
                 return false;
