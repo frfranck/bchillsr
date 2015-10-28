@@ -9,7 +9,7 @@ from bottle.ext.websocket import websocket
 #from peewee import Model, CharField, IntegerField
 #from playhouse.shortcuts import *
 
-import json
+import json,os,sys
 import time
 from pprint import pprint
 
@@ -23,7 +23,9 @@ SERVER_PORT=8080
 ## websocket variable
 wsusers = set()
 
-
+rootDir=os.path.dirname(os.path.abspath(__file__))
+print rootDir
+print "joe"
 class var_dump:
        def __init__ (self, PrintableClass):
            for name in dir(PrintableClass):
@@ -60,7 +62,7 @@ def index():
 ##------------------------------
 @app.route('/static/<filepath:path>', method='GET')
 def server_static(filepath):
-    return static_file(filepath, root='/opt2/chill/src/static')
+    return static_file(filepath, root=rootDir+'/static')
 
 ##------------------------------
 ## Service health
