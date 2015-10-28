@@ -27,6 +27,8 @@ smart routing demo
 # Web Socket API endpoint:
 	http://<ip>:8080/events
 
+    message structure
+    <producer>:<supplier>:<receiver>:<cmdid>:<priority>:<location>:<status>:<delay>
 
 # Button / API call mapping
 	P1:
