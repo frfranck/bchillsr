@@ -42,6 +42,7 @@
                 eventstr += ":" + $('#receiver').val()
                 eventstr += ":" + $('#cmdid').val()
                 eventstr += ":" + $('#priority').val()
+                eventstr += ":" + $('#location').val()
                 eventstr += ":" + $('#status').val()
                 eventstr += ":" + $('#delay').val()
                 ws.send(eventstr);
@@ -61,6 +62,7 @@
         <input id="receiver" type="text" value="airb1">
         <input id="cmdid" type="text" value="a123" />
         <input id="priority" type="text" value="H" size="2"/>
+        <input id="location" type="text" value="P2" size="2"/>        
         <input id="status" type="text" value="progress" size="5" />
         <input id="delay" type="text" value="6000" size="4" />
         <input type="submit" value="Send" />

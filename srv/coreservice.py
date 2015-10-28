@@ -105,11 +105,11 @@ def error409(error):
 ## shall be put or post method
 ##curl  --header "Content-Type:application/json" -X PUT -d '{"status": "done","delay": 0}' http://127.0.0.1:8080/api/event/cisc1/dh1/airb1/a123/done/0
 
-@app.route('/api/event/<prod>/<supp>/<rcv>/<cmdid>/<priority>/<status>/<delay>',method='PUT')
+@app.route('/api/event/<prod>/<supp>/<rcv>/<cmdid>/<priority>/<location>/<status>/<delay>',method='PUT')
 @Enable_Cors
-def serversideevent(prod='none',supp='none',rcv='none',cmdid='none',priority='none', status='none',delay='0'):
+def serversideevent(prod='none',supp='none',rcv='none',cmdid='none',priority='none',location='none',  status='none',delay='0'):
     for u in wsusers:
-        msg = prod + ':' + supp + ':' + rcv + ':' + cmdid + ':'+priority+ ':' + status + ';' + delay
+        msg = prod + ':' + supp + ':' + rcv + ':' + cmdid + ':'+priority+ ':'+ location + ':' + status + ';' + delay
         u.send(msg)
 
 # websocket method
