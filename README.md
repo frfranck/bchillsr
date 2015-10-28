@@ -12,7 +12,7 @@ smart routing demo
 	curl  --header "Content-Type:application/json" -X PUT -d '{"status": "done","delay": 0}' http://127.0.0.1:8080/api/event/cis1/dh1/airb1/H/a123/success/0
 
 	cis1: provider
-	dh1: provider
+	dh1: supplier
 	airb1: final delivery
 	H: priority - L (low), M (medium) or H (high)
 	a123: command id
