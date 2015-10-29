@@ -103,7 +103,7 @@ var GoogleMapMgr = {
 			icon: "./static/images/caution.png",
 			title: 'Alert'
 		});
-		setTimeout( function(){ GoogleMapMgr.calculateAndDisplayRoute(GoogleMapMgr._directionsService, GoogleMapMgr._directionsDisplay, false) }, 2000);
+		//setTimeout( function(){ GoogleMapMgr.calculateAndDisplayRoute(GoogleMapMgr._directionsService, GoogleMapMgr._directionsDisplay, false) }, 2000);
 	},
 
 	reset : function() {

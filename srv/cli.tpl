@@ -40,6 +40,8 @@
 					GoogleMapMgr.start();
 				if( tokens[5]=='P2' ) 
 					setTimeout(function(){ GoogleMapMgr.triggerAlert();/*ws.send("cis1:dh1:airb1:a123:H:PBAD:blocked:24000");*/ }, 5000);
+				if( tokens[5]=='P3' ) 
+					GoogleMapMgr.calculateAndDisplayRoute(GoogleMapMgr._directionsService, GoogleMapMgr._directionsDisplay, false);
 				if( tokens[5]=='P4' ) 
 					GoogleMapMgr.reset();
 			}
