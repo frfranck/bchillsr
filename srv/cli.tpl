@@ -56,16 +56,16 @@
 	   }
 	   createWebSocket();
 	   $('#dashboard').append("<tr> <td>a123 ready</td> <td></td> <td></td> <td></td> </tr>");
-	   map_initialize();
+	   GoogleMapMgr.map_initialize();
 	});
 </script>
 
 </head>
 <body>
 	<div id="map"></div>
-	<input type=button onclick="start()" value="Start"/>
-	<input type=button onclick="triggerAlert()" value="Trigger Alert"/>
-	<input type=button onclick="reset()" value="Reset"/>
+	<input type=button onclick="GoogleMapMgr.start()" value="Start"/>
+	<input type=button onclick="GoogleMapMgr.triggerAlert()" value="Trigger Alert"/>
+	<input type=button onclick="GoogleMapMgr.reset()" value="Reset"/>
 	<table id="dashboard">
 		<tr> <th><h2>Cisco</h2></th> <th><h2>Exp1</h2></th> <th><h2>Exp2</h2></th> <th><h2>Delivery</h2></th> </tr>
 	</table>
