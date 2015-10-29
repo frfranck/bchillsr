@@ -9,7 +9,7 @@ from bottle.ext.websocket import websocket
 #from peewee import Model, CharField, IntegerField
 #from playhouse.shortcuts import *
 
-import json
+import json,os,sys
 import time
 from pprint import pprint
 
@@ -23,7 +23,9 @@ SERVER_PORT=8080
 ## websocket variable
 wsusers = set()
 
-
+rootDir=os.path.dirname(os.path.abspath(__file__))
+print rootDir
+print "joe"
 class var_dump:
        def __init__ (self, PrintableClass):
            for name in dir(PrintableClass):
@@ -65,7 +67,7 @@ def client():
 ##------------------------------
 @app.route('/static/<filepath:path>', method='GET')
 def server_static(filepath):
-    return static_file(filepath, root='/media/sf_Shared/chill/bchillsr/bchillsr/srv/static')
+    return static_file(filepath, root=rootDir+'/static')
 
 ##------------------------------
 ## Service health
@@ -110,11 +112,11 @@ def error409(error):
 ## shall be put or post method
 ##curl  --header "Content-Type:application/json" -X PUT -d '{"status": "done","delay": 0}' http://127.0.0.1:8080/api/event/cisc1/dh1/airb1/a123/done/0
 
-@app.route('/api/event/<prod>/<supp>/<rcv>/<cmdid>/<priority>/<status>/<delay>',method='PUT')
+@app.route('/api/event/<prod>/<supp>/<rcv>/<cmdid>/<priority>/<location>/<status>/<delay>',method='PUT')
 @Enable_Cors
-def serversideevent(prod='none',supp='none',rcv='none',cmdid='none',priority='none', status='none',delay='0'):
+def serversideevent(prod='none',supp='none',rcv='none',cmdid='none',priority='none',location='none',  status='none',delay='0'):
     for u in wsusers:
-        msg = prod + ':' + supp + ':' + rcv + ':' + cmdid + ':'+priority+ ':' + status + ';' + delay
+        msg = prod + ':' + supp + ':' + rcv + ':' + cmdid + ':'+priority+ ':'+ location + ':' + status + ';' + delay
         u.send(msg)
 
 # websocket method
