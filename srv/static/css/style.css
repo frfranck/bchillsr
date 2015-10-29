@@ -1,0 +1,45 @@
+#div_cisco{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 300px;
+	height: 500px;
+	border: 1px solid;
+}
+#div_exp1{
+	position: absolute;
+	top: 0px;
+	left: 300px;
+	width: 300px;
+	height: 500px;
+	border: 1px solid;
+}
+#div_exp2{
+	position: absolute;
+	top: 0px;
+	left: 600px;
+	width: 300px;
+	height: 500px;
+	border: 1px solid;
+}
+#div_delivery{
+	position: absolute;
+	top: 0px;
+	left: 900px;
+	width: 300px;
+	height: 500px;
+	border: 1px solid;
+}
+#div_messages{
+	position: absolute;
+	top: 500px;
+}
+td{
+	width: 300px;
+}
+th{
+	width: 300px;
+}
+h2 {
+	text-align: center;
+}

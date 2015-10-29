@@ -55,7 +55,12 @@ def Enable_Cors(fn):
 @app.route('/',method='GET')
 def index():
     response.headers['Content-type'] = 'text/html'
-    return template('portalbasic')
+    return template('portaltest')
+
+@app.route('/cli.html',method='GET')
+def client():
+    response.headers['Content-type'] = 'text/html'
+    return template('cli')
 
 ##------------------------------
 ## Serve static resources
@@ -111,7 +116,7 @@ def error409(error):
 @Enable_Cors
 def serversideevent(prod='none',supp='none',rcv='none',cmdid='none',priority='none',location='none',  status='none',delay='0'):
     for u in wsusers:
-        msg = prod + ':' + supp + ':' + rcv + ':' + cmdid + ':'+priority+ ':'+ location + ':' + status + ';' + delay
+        msg = prod + ':' + supp + ':' + rcv + ':' + cmdid + ':'+priority+ ':'+ location + ':' + status + ':' + delay
         u.send(msg)
 
 # websocket method
