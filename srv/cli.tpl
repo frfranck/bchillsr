@@ -31,6 +31,9 @@
 					$('#dashboard').append("<tr> <td>a123 ready</td> <td>"+tokens[5]+"</td> <td></td> <td>"+tokens[6]+"/"+tokens[7]+"</td> </tr>");
 				else if( tokens[1]=='dh2' )
 					$('#dashboard').append("<tr> <td>a123 ready</td> <td></td> <td>"+tokens[5]+"</td> <td>"+tokens[6]+"/"+tokens[7]+"</td> </tr>");
+				
+				if( tokens[5]=='P2' ) 
+					setTimeout(function(){ ws.send("cis1:dh1:airb1:a123:H:PBAD:blocked:24000"); }, 5000);
 			}
 			else {
 				if( tokens[1]=='dh1' )
