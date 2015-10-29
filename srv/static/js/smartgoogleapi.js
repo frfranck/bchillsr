@@ -77,6 +77,10 @@ var GoogleMapMgr = {
 
 	start : function() {
 		
+		if( GoogleMapMgr._marker_trucks ) {
+			GoogleMapMgr._marker_trucks.setMap(null);
+			GoogleMapMgr._marker_trucks = undefined;
+		}
 		GoogleMapMgr._marker_trucks = new google.maps.Marker({
 			position: {lat: 48.611486, lng: 2.30604},
 			map: GoogleMapMgr._map,
@@ -89,6 +93,10 @@ var GoogleMapMgr = {
 
 	triggerAlert : function() {
 		
+		if( GoogleMapMgr._marker_alert ) {
+			GoogleMapMgr._marker_alert.setMap(null);
+			GoogleMapMgr._marker_alert = undefined;
+		}
 		GoogleMapMgr._marker_alert = new google.maps.Marker({
 			position: alert_pos,
 			map: GoogleMapMgr._map,
