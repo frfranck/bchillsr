@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Chill test client</title>
+<script src="../srv/static/js/jquery.1.6.4.min.js"></script>
+<script>
+	$(document).ready(function() {
+		if (!window.WebSocket) {
+			if (window.MozWebSocket) {
+				window.WebSocket = window.MozWebSocket;
+			} else {
+				$('#messages').append("<li>Your browser doesn't support WebSockets.</li>");
+			}
+		}
+		
+		function createWebSocket () {
+		  var serverip = location.host;
+		  //alert(serverip);
+		  var ws = new WebSocket('ws://'+serverip+'/events');
+		  ws.onopen = function(evt) {
+			console.log('Connected to delivery status queuing pipeline.');
+			$('#messages').append('<li>Connected to delivery status queuing pipeline.</li>');
+		  }
+		  ws.onmessage = function(evt) {
+			console.log('onmessage(): '+evt.data);
+			$('#messages').append('<li>' + evt.data + '</li>');
+		  }
+
+		  ws.onclose = function () {
+			setTimeout(function () {
+			// Connection has closed so try to reconnect every 10 seconds.
+			createWebSocket(); 
+			}, 10*1000);
+		  }
+
+		 /*$('#send-event').submit(function() {
+			eventstr = $('#prod').val()
+			eventstr += ":" + $('#suppl').val()
+			eventstr += ":" + $('#receiver').val()
+			eventstr += ":" + $('#cmdid').val()
+			eventstr += ":" + $('#priority').val()
+			eventstr += ":" + $('#status').val()
+			eventstr += ":" + $('#delay').val()
+			ws.send(eventstr);
+			$('#message').val('').focus();
+			return false;
+		 });*/
+	   }
+	   createWebSocket();
+	});
+</script>
+</head>
+
+</head>
+<body>
+test
+<div id="messages"></div>
+</body>
+</html>

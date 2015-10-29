@@ -53,14 +53,19 @@ def Enable_Cors(fn):
 @app.route('/',method='GET')
 def index():
     response.headers['Content-type'] = 'text/html'
-    return template('portalbasic')
+    return template('portaltest')
+
+@app.route('/cli.html',method='GET')
+def client():
+    response.headers['Content-type'] = 'text/html'
+    return template('cli')
 
 ##------------------------------
 ## Serve static resources
 ##------------------------------
 @app.route('/static/<filepath:path>', method='GET')
 def server_static(filepath):
-    return static_file(filepath, root='/opt2/chill/src/static')
+    return static_file(filepath, root='/media/sf_Shared/chill/bchillsr/bchillsr/srv/static')
 
 ##------------------------------
 ## Service health
