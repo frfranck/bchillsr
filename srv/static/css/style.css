@@ -34,6 +34,12 @@
 	position: absolute;
 	top: 500px;
 }
+td{
+	width: 300px;
+}
+th{
+	width: 300px;
+}
 h2 {
 	text-align: center;
 }
